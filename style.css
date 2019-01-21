@@ -1,0 +1,185 @@
+/9/*
+CSS reset
+*/
+html, body, div, span, applet, object, iframe,
+h,+ h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+#container {
+  margin: auto;
+}
+#header {
+  background-image: url(images/background10.jpg);
+  /*background-image: linear-gradient(to top , rgba(255,244,233,0.22), rgba(255,244,233,0.22)) , url(images/background8.jpg);*/
+  /*background-image: linear-gradient(to top , rgba(175,175,175,0.23), rgba(195,195,195,0.33)) , url(images/background10.jpg);*/
+  background-size: cover;
+  height: 850px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+#logo {
+  float: left;
+  padding: 50px 0px 0px 150px;
+}
+#navi {
+  float: right;
+  text-align: right;
+  padding-top: 35px;
+  font-size: 28px;
+  color: #FFF;
+}
+#main_header {
+  clear: both;
+  text-align: center;
+  color: #FFF;
+}
+#login {
+  padding-top: 30px;
+  width: 600px;
+  height: 400px;
+  background-color: rgba(255,244,233,0.40);
+  margin: auto;
+}
+
+/* ------ divovi sa stranice registracija ------- */
+#registracija {
+  background-image: url(images/background10.jpg);
+  background-size: cover;
+  height: 850px;
+  padding-top: 30px;
+}
+#registracija_form {
+  padding-top: 30px;
+  background-color: rgba(255,244,233,0.40);
+  width: 600px;
+  height: 500px;
+  margin:auto;
+  color: #FFF;
+  text-align: center;
+}
+
+/* ------ divovi sa stranice profila ------- */
+#profil {
+  background-image: url(images/background5.jpg);
+  background-size: cover;
+  height: 700px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #0059B1;
+}
+#profil_form {
+  background-color: rgba(255,244,233,0.70);
+  width: 800px;
+  height: 700px;
+  margin:auto;
+  margin-bottom: 50px;
+}
+#slika {
+  float:left;
+  width: 300px;
+  text-align: center;
+}
+#podaci {
+  float: left;
+  text-align: left;
+  padding-top: 50px;
+}
+
+/* ------ divovi sa stranice popis izleta ------- */
+#popis_izleta {
+  background-image: url(images/izleti.jpg);
+  background-size: cover;
+  height: 900px;
+}
+#izlet-1 {
+  background-image: linear-gradient(to top , rgba(255,244,233,0.70), rgba(255,244,233,0.10)) , url(images/makarska.jpg);
+}
+
+
+/* ------- KLASE ----- */
+.main_header {
+  font-size: 100px;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  color: #FFF;
+}
+.button_class {
+  background-color: #E2680D;
+  color: #FFF;
+  border: #B64601;
+  border-radius: 10px;
+  padding: 10px;
+}
+.izlet {
+  width: 300px;
+  height: 300px;
+  background-color: #FFF;
+  float: left;
+  margin-right: 80px;
+  margin-top: 50px;
+  text-align: center;
+  color: #FFF;
+}
+.izlet_jedan {
+  margin-left: 220px;
+}
+.izlet_naslov {
+  color: #FFF;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 42px;
+}
+/* ------- ZAVRSETAK KLASA -------- */
+
+ul li {
+  display: inline;
+  padding: 25px;
+}
+p {
+  font-size: 20px;
+}
+input {
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 250px;
+}
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 18.72px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 13.28px;
+}
+h6 {
+  font-size: 12px;
+}
