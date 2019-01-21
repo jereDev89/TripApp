@@ -107,12 +107,10 @@ body {
 
 /* ------ divovi sa stranice popis izleta ------- */
 #popis_izleta {
-  background-image: url(images/izleti.jpg);
+  background-image: url(images/izlet2.jpg);
   background-size: cover;
   height: 900px;
-}
-#izlet-1 {
-  background-image: linear-gradient(to top , rgba(255,244,233,0.70), rgba(255,244,233,0.10)) , url(images/makarska.jpg);
+
 }
 
 
@@ -132,14 +130,13 @@ body {
   padding: 10px;
 }
 .izlet {
-  width: 300px;
+  width: 900px;
   height: 300px;
-  background-color: #FFF;
-  float: left;
-  margin-right: 80px;
+  margin:auto;
   margin-top: 50px;
-  text-align: center;
-  color: #FFF;
+  border-radius: 15px;
+  background-color: rgba(255,244,233,0.60);
+
 }
 .izlet_jedan {
   margin-left: 220px;
@@ -149,6 +146,29 @@ body {
   text-align: center;
   padding-top: 50px;
   font-size: 42px;
+}
+.slika_izleta {
+  width: 350px;
+  height: 300px;
+  border-radius:  15px 0px 0px 15px;
+  float:left;
+  margin-right: 20px;
+}
+.opis_izleta {
+  color: #808080;
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 20px;
+  text-align: left;
+  padding-left: 20px;
+}
+.plava_boja {
+  color: #0059B1;
+}
+.saznaj {
+  color: #0059B1;
+  text-align: right;
+  padding-right: 10px;
 }
 /* ------- ZAVRSETAK KLASA -------- */
 
