@@ -4,14 +4,14 @@
     <title>Trip App</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" media="all">
+    <link href="animate.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Charm:700" rel="stylesheet">
   </head>
   <body>
-    <div id="container">
-
-      <div id="header">
+    <div id="container" class="background_image">
 
         <div id="navi" class="">
           <ul>
@@ -21,8 +21,16 @@
           </ul>
         </div>
 
-        <div id="main_header" class="">
-          <h1 class="main_header">Trip App</h1>
+        <div id="logo">
+          <img src="images/logo.png" alt="Logo" class="logo_slika animated rotateIn"/>
+        </div>
+
+        <div id="header">
+          <h1 class="main_header animated bounceInDown">Trip App</h1>
+        </div>
+
+
+
           <div id="login" class="">
             <h2>Login</h2>
             <label>Username</label><br>
@@ -30,18 +38,16 @@
             <label>Password</label><br>
             <input name="password" type="password"/><br>
             <button type="button" name="login" class="button_class">Login</button>
-            <p>Molilmo registrirajte se!</p>
+
+            <p class="registracija_rec">Molimo Vas da se registrirate ukoliko niste naš član!</p>
             <button type="button" name="registracija" class="button_class">Registracija</button>
-
-
           </div>
-        </div>
 
-      </div>
 
+          <div id="footer">
+            <p>Bootcamp <span class="bold_text">Strumfovi</span> Production &copy 2019</p>
+          </div>
 
     </div>
-
-
   </body>
 </html>

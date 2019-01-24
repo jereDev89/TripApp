@@ -23,76 +23,62 @@ time, mark, audio, video {
 }
 body {
   font-family: 'Raleway', sans-serif;
+  background-image: url(images/background12.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #container {
   margin: auto;
 }
-#header {
-  background-image: url(images/background10.jpg);
-  /*background-image: linear-gradient(to top , rgba(255,244,233,0.22), rgba(255,244,233,0.22)) , url(images/background8.jpg);*/
-  /*background-image: linear-gradient(to top , rgba(175,175,175,0.23), rgba(195,195,195,0.33)) , url(images/background10.jpg);*/
-  background-size: cover;
-  height: 850px;
-  padding-left: 120px;
-  padding-right: 120px;
-}
+
+/* prvi dio stranice logo-navigacija-naslov(Trip App) ---- */
 #logo {
   float: left;
   padding: 50px 0px 0px 150px;
+}
+#header {
+  clear: both;
+  text-align: center;
 }
 #navi {
   float: right;
   text-align: right;
   padding-top: 35px;
-  font-size: 28px;
+  margin-bottom: -30px;
+  padding-right: 90px;
+  font-size: 24px;
   color: #FFF;
-}
-#main_header {
-  clear: both;
-  text-align: center;
-  color: #FFF;
-}
-#login {
-  padding-top: 30px;
-  width: 600px;
-  height: 400px;
-  background-color: rgba(255,244,233,0.40);
-  margin: auto;
 }
 
-/* ------ divovi sa stranice registracija ------- */
-#registracija {
-  background-image: url(images/background10.jpg);
-  background-size: cover;
-  height: 850px;
-  padding-top: 30px;
-}
-#registracija_form {
-  padding-top: 30px;
-  background-color: rgba(255,244,233,0.40);
-  width: 600px;
-  height: 500px;
-  margin:auto;
-  color: #FFF;
+/* ---------- divovi za login i registraciju ----------- */
+#login , #registracija_form , #profil , #dodavanje_izleta_form , #izlet_form {
+  clear: both;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  width: 850px;
+  background-color: rgba(255,244,233,0.70);
+  border-radius: 20px;
+  color: #005278;
+  border: 1px solid #005278;
+  margin: auto;
   text-align: center;
+}
+
+/* -------- footer div -------*/
+#footer {
+  width: 750px;
+  color: #FFF;
+  margin: auto;
+  text-align: center;
+  margin-top: 120px;
 }
 
 /* ------ divovi sa stranice profila ------- */
 #profil {
-  background-image: url(images/background5.jpg);
-  background-size: cover;
   height: 700px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  color: #0059B1;
-}
-#profil_form {
-  background-color: rgba(255,244,233,0.70);
-  width: 800px;
-  height: 700px;
-  margin:auto;
-  margin-bottom: 50px;
 }
 #slika {
   float:left;
@@ -107,40 +93,67 @@ body {
 
 /* ------ divovi sa stranice popis izleta ------- */
 #popis_izleta {
-  background-image: url(images/izlet2.jpg);
-  background-size: cover;
-  height: 900px;
+  clear: both;
+  padding-top: 30px;
+}
+
+/* ------ divovi sa stranice dodavanje izleta ------- */
+#dodavanje_izleta {
+  clear: both;
+  padding-top: 30px;
+}
+#dodavanje_izleta_form {
+  padding-top: 30px;
+}
+#izleti {
+  clear: both;
+  padding-top: 30px;
+}
+#izlet_form {
+  padding: 30px;
+  color: #4B4B4B;
+  text-align: left;
 
 }
 
-
 /* ------- KLASE ----- */
+/* ---- klasa glavnog naslova Trip App ------- */
 .main_header {
-  font-size: 100px;
+  font-size: 85px;
   font-weight: bold;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Charm', cursive;
   text-align: center;
   color: #FFF;
 }
+/* ---- klasa za sliku loga ---- */
+.logo_slika {
+  width: 150px;
+  height: 150px;
+  margin-bottom: -50px;
+  margin-top: -40px;
+  padding-left: 70px;
+}
 .button_class {
-  background-color: #E2680D;
+  background-color: #005278;
   color: #FFF;
-  border: #B64601;
-  border-radius: 10px;
+  width: 250px;
+  border: 1px solid #1B2D39;
+  border-radius: 20px;
   padding: 10px;
+  font-size: 16px;
+  margin:10px;
+  outline:none
 }
 .izlet {
   width: 900px;
   height: 300px;
-  margin:auto;
+  margin: auto;
   margin-top: 50px;
+  border: 1px solid #005278;
   border-radius: 15px;
-  background-color: rgba(255,244,233,0.60);
+  background-color: rgba(255,244,233,0.80);
+}
 
-}
-.izlet_jedan {
-  margin-left: 220px;
-}
 .izlet_naslov {
   color: #FFF;
   text-align: center;
@@ -165,11 +178,33 @@ body {
 .plava_boja {
   color: #0059B1;
 }
+.bold_text {
+  font-weight: bold;
+}
 .saznaj {
-  color: #0059B1;
+  color: #005278;
   text-align: right;
   padding-right: 10px;
 }
+.crta {
+  width: 120px;
+	border-color: #005278;
+	border-width: 2px;
+	margin-bottom: 30px;
+}
+/* ------ klasa za recenicu iznad regitracija buttona ------ */
+.registracija_rec {
+  margin-bottom: 5px;
+  padding-top: 20px;
+}
+
+.popis_izleta_naslov {
+  text-align: center;
+  color: #FFF;
+  font-size: 45px;
+}
+
+
 /* ------- ZAVRSETAK KLASA -------- */
 
 ul li {
@@ -179,11 +214,35 @@ ul li {
 p {
   font-size: 20px;
 }
-input {
+input , textarea {
   border-radius: 10px;
   padding: 5px;
   margin-bottom: 10px;
   width: 250px;
+  border: 1px solid #1B2D39;
+  font-size: 16px;
+  color: #1B2D39;
+  text-align: center;
+}
+input:focus {
+    outline:none !important;
+}
+textarea:focus {
+  outline:none !important;
+}
+textarea {
+  width: 450px;
+  text-align: left;
+}
+#dodavanje_izleta input {
+  width: 450px;
+}
+
+label {
+  padding-bottom: 5px;
+}
+iframe {
+  width: 850px;
 }
 h1 {
   font-size: 32px;
