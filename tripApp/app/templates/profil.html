@@ -9,15 +9,28 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm:700" rel="stylesheet">
+    <style>
+        body {
+          background-image: url(/static/css/images/background12.jpg);
+        }
+        a, a:link, a:visited {
+          color: #FFF;
+          text-decoration: none;
+        }
+        a:hover {
+        	font-weight: bold;
+        }
+    </style>
   </head>
   <body>
     <div id="container">
 
       <div id="navi" class="">
         <ul>
-          <li>Home</li>
-          <li>Trips</li>
-          <li>Register</li>
+          <a href="/index"><li>Home</li></a>
+          <a href="#"><li>Trips</li></a>
+          <a href="/registracija"><li>Register</li></a>
+          <a href="/profil"><li>Profil</li></a>
         </ul>
       </div>
 

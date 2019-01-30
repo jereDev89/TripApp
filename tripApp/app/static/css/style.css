@@ -23,7 +23,7 @@ time, mark, audio, video {
 }
 body {
   font-family: 'Raleway', sans-serif;
-  background-image: url_for('static', filename='css/style.css');
+  background-image: url(images/background12.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -50,7 +50,7 @@ body {
   margin-bottom: -30px;
   padding-right: 90px;
   font-size: 24px;
-  color: #FFF;
+
 }
 
 /* ---------- divovi za login i registraciju ----------- */
@@ -210,6 +210,23 @@ body {
 ul li {
   display: inline;
   padding: 25px;
+  color: #FFF;
+  text-decoration: none;
+}
+a {
+  color: #FFF;
+  text-decoration: none;
+}
+a.navi:link {
+	text-decoration: none;
+	color: #000;
+}
+a.navi:visited {
+	color: #000;
+	text-decoration: none
+}
+a.navi:hover {
+	font-weight: bold;
 }
 p {
   font-size: 20px;

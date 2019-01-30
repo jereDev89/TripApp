@@ -3,22 +3,35 @@
   <head>
     <title>Trip App</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" media="all">
-    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all">
+    <link href="/static/css/animate.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm:700" rel="stylesheet">
+    <style>
+        body {
+          background-image: url(/static/css/images/background12.jpg);
+        }
+        a, a:link, a:visited {
+          color: #FFF;
+          text-decoration: none;
+        }
+        a:hover {
+        	font-weight: bold;
+        }
+    </style>
   </head>
   <body>
     <div id="container" class="background_image">
 
-        <div id="navi" class="">
+        <div id="navi">
           <ul>
             <a href="/index"><li>Home</li></a>
-            <li>Trips</li>
+            <a href="#"><li>Trips</li></a>
             <a href="/registracija"><li>Register</li></a>
             <a href="/profil"><li>Profil</li></a>
+            <a href="/logout"><li>Logout</li></a>
           </ul>
         </div>
 
@@ -40,7 +53,7 @@
               <label>Username</label><br>
               {{ form.username }} <br>
               {% for error in form.username.errors %}
-                <span style="color: red;">{{ error }}</span>
+                <span style="color:red;">{{ error }}</span>
               {% endfor %} <br>
 
               <label>Password</label><br>
@@ -49,7 +62,8 @@
                 <span style="color: red;">{{ error }}</span>
               {% endfor %} <br>
 
-              <button type="button" name="login" class="button_class"> {{ form.submit() }} </button>
+              <span class="button_class">{{ form.submit }}</span>
+
             </form>
 
             <p class="registracija_rec">Molimo Vas da se registrirate ukoliko niste naš član!</p>
