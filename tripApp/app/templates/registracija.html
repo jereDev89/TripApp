@@ -47,9 +47,12 @@
 
         <div id="registracija_form">
           <h2>Registracija</h2>
-
-          <label>Ime i prezime</label><br>
-          <input type="text" name="ime_korisnika"/><br>
+          <form action="" method="post" novalidate>
+             {{ form.hidden_tag() }}
+          {{ form.ime.label }}
+          {{ form.ime }}
+          {{ form.submit }}
+        </form>
 
           <label>Email</label><br>
           <input type="email" name="email"/><br>

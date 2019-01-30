@@ -1,14 +1,11 @@
-from app import app
-from flask import Flask, render_template, url_for, flash, redirect
-from app.forms import LoginForm, CreateTripForm
-from flask_login import current_user, login_user
+from app import app, db
+from flask import render_template, url_for, flash, redirect
+from app.forms import LoginForm, CreateTripForm, RegisterForm
 from app.models import User
-from flask_login import logout_user
-from flask_login import login_required
+from flask_login import current_user, login_user, logout_user
 
 
 @app.route('/')
-@app.route('/index', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -18,10 +15,10 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
-            return redirect(url_for('login'))
+            return redirect(url_for('profil'))
         login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('profil'))
-    return render_template('index.html', form=form)
+        return redirect(url_for('index'))
+    return render_template('index.html', title='Sign In', form=form)
 
 
 @app.route('/logout')
@@ -30,9 +27,15 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/registracija')
+@app.route('/registracija', methods=['GET', 'POST'])
 def register():
-    return render_template('registracija.html')
+    form = RegisterForm()
+    if form.validate_on_submit():
+        user = User(ime_korisnika=form.ime.data)
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('login'))
+    return render_template('registracija.html', form=form)
 
 
 @app.route('/profil')
@@ -64,3 +67,7 @@ def dodaj():
     if form.validate_on_submit():
         return "Izlet dodan!"
     return render_template('dodavanje_izleta.html', title='Dodaj izlet', form=form)
+
+@app.route('/popis_izleta')
+def popis():
+    return render_template('popis_izleta.html')

@@ -9,6 +9,12 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Login')
 
+
+class RegisterForm(FlaskForm):
+    ime = StringField('Ime', validators=[DataRequired()])
+    submit = SubmitField('Registriraj se!')
+
+
 class CreateTripForm(FlaskForm):
     naziv_izleta = StringField('Naziv_izleta', validators=[DataRequired()])
     lokacija = StringField('Lokacija', validators=[DataRequired()])
