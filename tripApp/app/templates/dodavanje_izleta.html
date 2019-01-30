@@ -36,38 +36,72 @@
 
       <div id="logo">
         <img src="/static/css/images/logo.png" alt="Logo" class="logo_slika animated rotateIn"/>
-      </div>
+      </div> <br>
 
-      <div id="dodavanje_izleta">
+      <div id="dodaj" class="">
+        <form action="" method="post" novalidate>
+              {{ form.hidden_tag() }}
 
         <h1 class="popis_izleta_naslov">Dodaj izlet</h1>
-        <hr class="crta"/>
-        <div id="dodavanje_izleta_form">
+        <!--hr class="crta"/-->
+        <div id="CreateTripForm">
           <label>Naziv izleta</label><br>
-          <input type="text" name="naziv_izleta"/><br>
+          <!--input type="text" name="naziv_izleta"/><br-->
+          {{ form.naziv_izleta }} <br>
+          {% for error in form.naziv_izleta.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
           <label>Lokacija</label><br>
-          <input type="text" name="lokacija"/><br>
+          <!--input type="text" name="lokacija"/><br-->
+          {{ form.lokacija }} <br>
+          {% for error in form.lokacija.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
           <label>Datum</label><br>
-          <input type="date" name="datum"/><br>
+          <!--input type="date" name="datum"/><br-->
+          {{ form.datum }} <br>
+          {% for error in form.datum.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
           <label>Min broj sudionika</label><br>
-          <input type="text" name="min_broj_sudionika"/><br>
+          <!--input type="text" name="min_broj_sudionika"/><br-->
+          {{ form.minimalan }} <br>
+          {% for error in form.minimalan.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
           <label>Max broj sudionika</label><br>
-          <input type="text" name="max_broj_sudionika"/><br>
+          <!--input type="text" name="max_broj_sudionika"/><br-->
+          {{ form.maksimalan }} <br>
+          {% for error in form.maksimalan.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
           <label>Prijevoz</label><br>
-          <input type="text" name="prijevoz"/><br>
+          <!--input type="text" name="prijevoz"/><br-->
+          {{ form.prijevoz }} <br>
+          {% for error in form.prijevoz.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
           <label>Opis izleta</label><br>
-          <textarea type="text" name="opis_izleta" col="100" rows="7"/></textarea><br>
+          <!--textarea type="text" name="opis_izleta" col="100" rows="7"/></textarea><br-->
+          {{ form.opis }} <br>
+          {% for error in form.opis.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
           <label>Cijena</label><br>
-          <input type="text" name="cijena"/><br>
+          <!--input type="text" name="cijena"/><br-->
+          {{ form.cijena }} <br>
+          {% for error in form.cijena.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %} <br>
 
-          <button type="button" name="dodaj_izlet" class="button_class">Dodaj izlet !</button>
+          <a href="/izlet"><button type="button" name="dodaj_izlet" class="button_class">Dodaj izlet !</button></a>
         </div>
 
       </div>
