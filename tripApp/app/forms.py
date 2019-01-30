@@ -1,6 +1,6 @@
 
 from flask_wtf import FlaskForm
-from wtforms import Form, BooleanField, StringField, PasswordField, validators
+from wtforms import Form, BooleanField, StringField, PasswordField, validators, SubmitField, DateField, DecimalField
 from wtforms.validators import DataRequired, ValidationError, Email, EqualTo
 
 
@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
 class CreateTripForm(FlaskForm):
     naziv_izleta = StringField('Naziv_izleta', validators=[DataRequired()])
     lokacija = StringField('Lokacija', validators=[DataRequired()])
-    datum = Date('Datum', validators=[DataRequired()])
+    datum = DateField('Datum', validators=[DataRequired()])
     minimalan = StringField('Min_broj_sudionika', validators=[DataRequired()])
     maksimalan = StringField('Max_broj_sudionika', validators=[DataRequired()])
     prijevoz = StringField('Prijevoz', validators=[DataRequired()])
