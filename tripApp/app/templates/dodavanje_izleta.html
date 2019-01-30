@@ -3,22 +3,34 @@
   <head>
     <title>Trip App - Dodavanje izleta</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" media="all">
-    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all">
+    <link href="/static/css/animate.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm:700" rel="stylesheet">
+    <style>
+        body {
+          background-image: url(/static/css/images/background12.jpg);
+        }
+        a, a:link, a:visited {
+          color: #FFF;
+          text-decoration: none;
+        }
+        a:hover {
+          font-weight: bold;
+        }
+    </style>
 
   </head>
   <body>
-    <div id="container">
+    <div id="container" class="background_image">
 
-      <div id="navi" class="">
+      <div id="navi">
         <ul>
-          <li>Home</li>
-          <li>Trips</li>
-          <li>Register</li>
+          <a href="/index"><li>Home</li></a>
+          <a href="#"><li>Trips</li></a>
+          <a href="/registracija"><li>Register</li></a>
         </ul>
       </div>
 

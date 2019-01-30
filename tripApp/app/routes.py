@@ -8,10 +8,7 @@ from flask_login import login_required
 
 
 @app.route('/')
-@app.route('/index' , methods=['GET', 'POST'])
-
-
-
+@app.route('/index', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -27,14 +24,10 @@ def login():
     return render_template('index.html', form=form)
 
 
-
-
-
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
-
 
 
 @app.route('/registracija')
@@ -45,10 +38,29 @@ def register():
 @app.route('/profil')
 def profil():
     user = {
-        'username': 'Jere' ,
-        'ime_korisnika': 'Ivan Jeremic' ,
-        'email': 'jere@gmail.com' ,
-        'mjesto_stanovanja': 'Rijeka' ,
+        'username': 'Jere',
+        'ime_korisnika': 'Ivan Jeremic',
+        'email': 'jere@gmail.com',
+        'mjesto_stanovanja': 'Rijeka',
         'izleti_korisnika': 'bla bla'
-        }
-    return render_template('profil.html' , user=user)
+    }
+    return render_template('profil.html', user=user)
+
+
+@app.route('/dodavanje_izleta', methods=['GET', 'POST'])
+def dodaj():
+    form = CreateTripForm()
+    izlet = {
+        'naziv_izleta': 'Rijeka',
+        'lokacija': 'Rijeka',
+        'datum': '28/01/2019',
+        'minimalan': '1',
+        'maksimalan': '51',
+        'prijevoz': 'autobus',
+        'opis': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        'cijena': '200,00'
+    }
+
+    if form.validate_on_submit():
+        return "Izlet dodan!"
+    return render_template('dodavanje_izleta.html', title='Dodaj izlet', form=form)
