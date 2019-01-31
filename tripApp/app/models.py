@@ -48,3 +48,8 @@ class Kombinacija(db.Model):
 
     def __repr__(self):
         return '<Kombinacija {}>'.format(self.user_id , self.izlet_id)
+
+
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id))
