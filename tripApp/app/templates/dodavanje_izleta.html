@@ -3,105 +3,59 @@
   <head>
     <title>Trip App - Dodavanje izleta</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all">
-    <link href="/static/css/animate.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" media="all">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Raleway|Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Charm:700" rel="stylesheet">
-    <style>
-        body {
-          background-image: url(/static/css/images/background12.jpg);
-        }
-        a, a:link, a:visited {
-          color: #FFF;
-          text-decoration: none;
-        }
-        a:hover {
-          font-weight: bold;
-        }
-    </style>
 
   </head>
   <body>
-    <div id="container" class="background_image">
+    <div id="container">
 
-      <div id="navi">
+      <div id="navi" class="">
         <ul>
-          <a href="/index"><li>Home</li></a>
-          <a href="#"><li>Trips</li></a>
-          <a href="/registracija"><li>Register</li></a>
+          <li>Home</li>
+          <li>Trips</li>
+          <li>Register</li>
         </ul>
       </div>
 
       <div id="logo">
         <img src="/static/css/images/logo.png" alt="Logo" class="logo_slika animated rotateIn"/>
-      </div> <br>
+      </div>
 
-      <div id="dodaj" class="">
-        <form action="" method="post" novalidate>
-              {{ form.hidden_tag() }}
+      <div id="dodavanje_izleta">
 
         <h1 class="popis_izleta_naslov">Dodaj izlet</h1>
-        <!--hr class="crta"/-->
-        <div id="CreateTripForm">
+        <hr class="crta"/>
+        <div id="dodavanje_izleta_form">
           <label>Naziv izleta</label><br>
-          <!--input type="text" name="naziv_izleta"/><br-->
-          {{ form.naziv_izleta }} <br>
-          {% for error in form.naziv_izleta.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <input type="text" name="naziv_izleta"/><br>
 
           <label>Lokacija</label><br>
-          <!--input type="text" name="lokacija"/><br-->
-          {{ form.lokacija }} <br>
-          {% for error in form.lokacija.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <input type="text" name="lokacija"/><br>
 
           <label>Datum</label><br>
-          <!--input type="date" name="datum"/><br-->
-          {{ form.datum }} <br>
-          {% for error in form.datum.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <input type="date" name="datum"/><br>
 
           <label>Min broj sudionika</label><br>
-          <!--input type="text" name="min_broj_sudionika"/><br-->
-          {{ form.minimalan }} <br>
-          {% for error in form.minimalan.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <input type="text" name="min_broj_sudionika"/><br>
 
           <label>Max broj sudionika</label><br>
-          <!--input type="text" name="max_broj_sudionika"/><br-->
-          {{ form.maksimalan }} <br>
-          {% for error in form.maksimalan.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <input type="text" name="max_broj_sudionika"/><br>
 
           <label>Prijevoz</label><br>
-          <!--input type="text" name="prijevoz"/><br-->
-          {{ form.prijevoz }} <br>
-          {% for error in form.prijevoz.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <input type="text" name="prijevoz"/><br>
 
           <label>Opis izleta</label><br>
-          <!--textarea type="text" name="opis_izleta" col="100" rows="7"/></textarea><br-->
-          {{ form.opis }} <br>
-          {% for error in form.opis.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <textarea type="text" name="opis_izleta" col="100" rows="7"/></textarea><br>
 
           <label>Cijena</label><br>
-          <!--input type="text" name="cijena"/><br-->
-          {{ form.cijena }} <br>
-          {% for error in form.cijena.errors %}
-          <span style="color:red;">{{ error }}</span>
-          {% endfor %} <br>
+          <input type="text" name="cijena"/><br>
 
-          <a href="/izlet"><button type="button" name="dodaj_izlet" class="button_class">Dodaj izlet!</button></a>
+          <button type="button" name="dodaj_izlet" class="button_class">Dodaj izlet !</button>
         </div>
 
       </div>

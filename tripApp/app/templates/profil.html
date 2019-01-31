@@ -45,16 +45,16 @@
       <div id="profil">
 
         <div id="slika">
-          <h1>Bok, {{ user['username'] }} !</h1>
+          <h1>Bok, {{ current_user.username }} !</h1>
           <img src="images/placeholder.png" alt="slika profila"/>
           <h4>Izmjena</h4>
         </div>
 
         <div id="podaci">
-          <h3>Ime i prezime:  {{ user['ime_korisnika'] }} </h3>
-          <h3>Email:  {{ user['email'] }}</h3>
-          <h3>Mjesto stanovanja:  {{ user['mjesto_stanovanja'] }}</h3>
-          <h3>Moji izleti:  {{ user['izleti_korisnika'] }}</h3>
+          <h3>Ime i prezime:  {{ current_user.ime_korisnika }} </h3>
+          <h3>Email:  {{ current_user.email }}</h3>
+          <h3>Mjesto stanovanja:  {{ current_user.mjesto_stanovanja }}</h3>
+          <h3>Moji izleti:  {{ current_user.izleti_korisnika }}</h3>
         </div>
       </div>
 
