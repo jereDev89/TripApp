@@ -50,31 +50,35 @@
           {{ form.hidden_tag() }}
 
           <label>Ime i prezime</label><br>
-          {{ form.ime_korisnika }}<br>
           {% for error in form.ime_korisnika.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span style="color: red; padding-bottom: 10px;">{{ error }}</span><br>
           {% endfor %}
+          {{ form.ime_korisnika }}<br>
+
 
           <label>Email</label><br>
-          {{ form.email }}<br>
           {% for error in form.email.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span style="color: red;">{{ error }}</span><br>
           {% endfor %}
+          {{ form.email }}<br>
+
 
           <label>Mjesto stanovanja</label><br>
           {{ form.mjesto_stanovanja }}<br>
 
           <label>Username</label><br>
-          {{ form.username }}<br>
           {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span style="color: red;">{{ error }}</span><br>
           {% endfor %}
+          {{ form.username }}<br>
+
 
           <label>Password</label><br>
-          {{ form.password }}<br>
           {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span style="color: red;">{{ error }}</span><br>
           {% endfor %}
+          {{ form.password }}<br>
+
 
           <!--<label>Ponovite password</label><br>
           {{ form.password_repeat }}<br>

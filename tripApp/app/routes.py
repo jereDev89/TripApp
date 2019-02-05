@@ -7,7 +7,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
-def login():
+def index():
     if current_user.is_authenticated:
         return redirect(url_for('profil', username=current_user.username))
     form = LoginForm()
@@ -24,7 +24,7 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))
 
 
 @app.route('/registracija' , methods=['GET', 'POST'])
@@ -38,6 +38,7 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('index'))
     return render_template('registracija.html', form=form)
+
 
 
 @app.route('/profil/<username>')

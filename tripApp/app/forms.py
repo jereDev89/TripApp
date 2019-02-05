@@ -20,24 +20,24 @@ class RegisterForm(FlaskForm):
     # password_repeat = PasswordField('Repeat Password', validators=[DataRequired(), EqualTo('password_hash')])
     submit = SubmitField('Registracija')
 
-    # def validate_username(self, username):
-    #     user = User.query.filter_by(username=username.data).first()
-    #     if user is not None:
-    #         raise ValidationError('Please use a different username.')
-    #
-    # def validate_email(self, email):
-    #     user = User.query.filter_by(email=email.data).first()
-    #     if user is not None:
-    #         raise ValidationError('Please use a different email address.')
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Username vec postoji...')
+
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('Email adresa vec postoji...')
 
 
 class CreateTripForm(FlaskForm):
     naziv_izleta = StringField('Naziv_izleta', validators=[DataRequired()])
     lokacija = StringField('Lokacija', validators=[DataRequired()])
     datum = DateField('Datum', validators=[DataRequired()])
-    minimalan = StringField('Min_broj_sudionika', validators=[DataRequired()])
-    maksimalan = StringField('Max_broj_sudionika', validators=[DataRequired()])
+    min_broj_sudionika = StringField('Min_broj_sudionika', validators=[DataRequired()])
+    max_broj_sudionika = StringField('Max_broj_sudionika', validators=[DataRequired()])
     prijevoz = StringField('Prijevoz', validators=[DataRequired()])
-    opis = StringField('Opis_izleta', validators=[DataRequired()])
+    opis_izleta = StringField('Opis_izleta', validators=[DataRequired()])
     cijena = DecimalField('Cijena', validators=[DataRequired()])
     dodaj = SubmitField('dodaj_izlet')

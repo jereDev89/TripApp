@@ -44,33 +44,61 @@
         <h1 class="popis_izleta_naslov">Dodaj izlet</h1>
         <hr class="crta"/>
         <div id="dodavanje_izleta_form">
+          <form action="" method="post" novalidate>
+              {{ form.hidden_tag() }}
+
           <label>Naziv izleta</label><br>
-          <input type="text" name="naziv_izleta"/><br>
+          {{ form.naziv_izleta }}<br>
+          {% for error in form.naziv_izleta.errors %}
+          <span style="color:red;">{{ error }}</span><br>
+          {% endfor %}
 
           <label>Lokacija</label><br>
-          <input type="text" name="lokacija"/><br>
+          {{ form.lokacija }}<br>
+          {% for error in form.lokacija.errors %}
+          <span style="color:red;">{{ error }}</span><br>
+          {% endfor %}
 
           <label>Datum</label><br>
-          <input type="date" name="datum"/><br>
+          <input type="date" name="to" placeholder="YYYY-DD-MM"><br>
+          {% for error in form.datum.errors %}
+          <span style="color:red;">{{ error }}</span><br>
+          {% endfor %}
 
-          <label>Min broj sudionika</label><br>
-          <input type="text" name="min_broj_sudionika"/><br>
+          <label>Minimalan</label><br>
+          {{ form.minimalan }}<br>
+          {% for error in form.minimalan.errors %}
+          <span style="color:red;">{{ error }}</span><br>
+          {% endfor %}
 
-          <label>Max broj sudionika</label><br>
-          <input type="text" name="max_broj_sudionika"/><br>
+          <label>Maksimalan</label><br>
+          {{ form.maksimalan }}<br>
+          {% for error in form.maksimalan.errors %}
+          <span style="color:red;">{{ error }}</span><br>
+          {% endfor %}
 
           <label>Prijevoz</label><br>
-          <input type="text" name="prijevoz"/><br>
+          {{ form.prijevoz }}<br>
+          {% for error in form.prijevoz.errors %}
+          <span style="color:red;">{{ error }}</span><br>
+          {% endfor %}
 
-          <label>Opis izleta</label><br>
-          <textarea type="text" name="opis_izleta" col="100" rows="7"/></textarea><br>
+          <label>Opis</label><br>
+          {{ form.opis }}<br>
+          {% for error in form.opis.errors %}
+          <span style="color:red;">{{ error }}</span>
+          {% endfor %}
 
           <label>Cijena</label><br>
-          <input type="text" name="cijena"/><br>
+          {{ form.cijena }}<br>
+          {% for error in form.cijena.errors %}
+          <span style="color:red;">{{ error }}</span><br>
+          {% endfor %}
 
-          <button type="button" name="dodaj_izlet" class="button_class">Dodaj izlet !</button>
+          <a href="/izlet"><button type="button" name="dodaj_izlet" class="button_class">Dodaj izlet!</button></a>
+        </form>
+
         </div>
-
       </div>
 
       <div id="footer">

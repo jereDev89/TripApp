@@ -49,16 +49,17 @@
               <h2>Login</h2>
 
               <label>Username</label><br>
-              {{ form.username }} <br>
               {% for error in form.username.errors %}
-                <span style="color:red;">{{ error }}</span>
-              {% endfor %} <br>
+                <span style="color:red;">{{ error }}</span><br>
+              {% endfor %}
+              {{ form.username }} <br>
+
 
               <label>Password</label><br>
-              {{ form.password }} <br>
               {% for error in form.password.errors %}
-                <span style="color: red;">{{ error }}</span>
-              {% endfor %} <br>
+                <span style="color: red;">{{ error }}</span><br>
+              {% endfor %}
+              {{ form.password }} <br><br>
 
               <span class="button_class">{{ form.submit }}</span>
 
